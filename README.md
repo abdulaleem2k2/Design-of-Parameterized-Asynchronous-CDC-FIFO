@@ -9,7 +9,7 @@ In digital hardware design, passing multi-bit data between two independent, asyn
 
 ## 🏗️ System Architecture
 
-![Asynchronous FIFO Architecture](Images/BlockDiagram.png)
+![Asynchronous FIFO Architecture](Images/Block_Diagram.png)
 
 ### Key Hardware Features
 * **Full Parameterization:** Both the data payload width (`data_size`) and the FIFO depth (`addr_size`) are easily configurable at the top level. The total memory depth is calculated as $2^{\text{addr\_size}}$.
