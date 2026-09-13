@@ -12,7 +12,7 @@ In digital hardware design, passing multi-bit data between two independent, asyn
 ![Asynchronous FIFO Architecture](Images/Block_Diagram.png)
 
 ### Key Hardware Features
-* **Full Parameterization:** Both the data payload width (`data_size`) and the FIFO depth (`addr_size`) are easily configurable at the top level. The total memory depth is calculated as $2^{\text{addr\_size}}$.
+* **Full Parameterization:** Both the data payload width (`data_size`) and the FIFO depth (`addr_size`) are easily configurable at the top level. The total memory depth is calculated as 2<sup>addr_size</sup>..
 * **Shared Dual-Port RAM:** Data is written synchronously and read combinationally, keeping the payload safely isolated from the synchronizers.
 * **Gray Code Synchronization:** Binary memory pointers are translated into Gray code before crossing clock domains. Because only one bit changes state at a time, the risk of multi-bit metastability capturing invalid pointer data is eliminated.
 * **Look-Ahead Flag Logic:** The `wfull` and `rempty` flags are generated using combinational look-ahead logic (calculating the *next* state) to ensure the flags raise instantly, preventing fatal memory overflows or underflows.
