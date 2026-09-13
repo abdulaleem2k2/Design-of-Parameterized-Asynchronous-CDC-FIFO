@@ -1,13 +1,13 @@
 # Parameterized Asynchronous CDC FIFO
 
-## 📌 Overview
+## Overview
 This repository contains the Register-Transfer Level (RTL) design and verification of a fully parameterized **Asynchronous First-In-First-Out (FIFO)** buffer written in Verilog. 
 
 In digital hardware design, passing multi-bit data between two independent, asynchronous clock domains (Clock Domain Crossing, or CDC) naturally leads to **metastability** and data corruption. This FIFO solves that problem by acting as an elastic buffer, isolating the read and write time zones. It utilizes N+1 bit Gray code pointers and dual-stage flip-flop synchronizers to guarantee flawless data transfer without data loss or glitches.
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ![Asynchronous FIFO Architecture](Images/Block_Diagram.png)
 
@@ -19,7 +19,7 @@ In digital hardware design, passing multi-bit data between two independent, asyn
 
 ---
 
-## 📁 Module Breakdown
+## Module Breakdown
 
 All Verilog source files are located in the [`Code/`](Code/) directory.
 
@@ -34,7 +34,7 @@ All Verilog source files are located in the [`Code/`](Code/) directory.
 
 ---
 
-## 📊 Simulation & Verification
+## Simulation & Verification
 
 The design was rigorously verified using a dual-clock Verilog testbench. The Write Clock (`wclk`) was set to a 10ns period (100 MHz), and the Read Clock (`rclk`) was set to a 24ns period (~41.6 MHz) to definitively prove the CDC crossing logic.
 
